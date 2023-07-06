@@ -7,7 +7,23 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const checkArray = function (arr) {};
+const checkArray = function (arr) {
+  if (typeof arr !== "object") {
+    alert("Inserisci un'array");
+    return;
+  } else {
+    let sum = 0;
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] <= 5) {
+        console.log("1E) il numero ", arr[i], " non è maggiore di 5");
+      } else {
+        sum += arr[i];
+        console.log("1E) il numero ", arr[i], " è maggiore di 5");
+      }
+    }
+    console.log("1E) Questa è la somma dei numeri maggiori di 5 ", sum);
+  }
+};
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -15,6 +31,44 @@ const checkArray = function (arr) {};
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const shoppingCartTotal = function (arr) {
+  let total = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i].quantity !== 0) {
+      let price = arr[i].price;
+      let quantity = arr[i].quantity;
+      total += price * quantity;
+    }
+  }
+  console.log("2E) Il totale è", total);
+};
+
+let shoppingCart = [
+  {
+    price: 7,
+    name: "meat",
+    id: 2836744,
+    quantity: 2,
+  },
+  {
+    price: 15.99,
+    name: "umbrella",
+    id: 7949212,
+    quantity: 1,
+  },
+  {
+    price: 0.26,
+    name: "potato",
+    id: 467298289,
+    quantity: 5,
+  },
+  {
+    price: 54.99,
+    name: "profume",
+    id: 3682821,
+    quantity: 1,
+  },
+];
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
