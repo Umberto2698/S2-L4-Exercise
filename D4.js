@@ -109,7 +109,7 @@ const epify = function (str) {
     let lettersReference = reference.split("");
     let word = str.slice(0, 6);
     let letters = word.split("");
-    for (i = 0; i < letters.length; i++) {
+    for (let i = 0; i < letters.length; i++) {
       if (letters[i] === lettersReference[i]) {
         break;
         //} else if (letters[i] === lettersReference[i].toLowerCase) {
@@ -183,7 +183,7 @@ const upperFirst = function (str) {
   } else {
     let inputLetter = str.split("");
     inputLetter.splice(0, 0, " ");
-    for (i = 0; i < inputLetter.length; i++) {
+    for (let i = 0; i < inputLetter.length; i++) {
       if (inputLetter[i] === " ") {
         inputLetter.splice(i + 1, 1, inputLetter[i + 1].toUpperCase());
       }
@@ -223,7 +223,7 @@ const giveMeRandom = function (n) {
     return;
   } else {
     let rndNumber = [];
-    for (i = 0; i < n; i++) {
+    for (let i = 0; i < n; i++) {
       let x = Math.random() * 11;
       rndNumber.push(x);
     }
