@@ -182,10 +182,10 @@ const upperFirst = function (str) {
     return;
   } else {
     let inputLetter = str.split("");
-    inputLetter[0] = inputLetter[0].toUpperCase();
+    inputLetter.splice(0, 0, " ");
     for (i = 0; i < inputLetter.length; i++) {
       if (inputLetter[i] === " ") {
-        inputLetter[i + 1] = inputLetter[i + 1].toUpperCase();
+        inputLetter.splice(i + 1, 1, inputLetter[i + 1].toUpperCase());
       }
     }
     let strUpperFirst = inputLetter.join("");
