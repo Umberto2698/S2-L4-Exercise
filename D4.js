@@ -85,9 +85,11 @@ const boundary = function (n) {
     alert("Questo valore non è consentito");
     return;
   } else if (n === 400 || (n > 20 && n <= 100)) {
-    console.log("4) True");
+    console.log("4) true");
+    return true;
   } else {
-    console.log("4) False");
+    console.log("4) false");
+    return false;
   }
 };
 
@@ -226,5 +228,6 @@ const giveMeRandom = function (n) {
       rndNumber.push(x);
     }
     console.log("10) ", rndNumber);
+    return rndNumber;
   }
 };

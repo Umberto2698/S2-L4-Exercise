@@ -7,6 +7,7 @@
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const checkArray = function (arr) {};
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
