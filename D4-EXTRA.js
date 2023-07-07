@@ -127,7 +127,7 @@ const maxShoppingCart = function (arr) {
         }
       }
     }
-    console.log(maxPrice);
+    console.log("4E) ", maxPrice);
   }
 };
 
@@ -142,7 +142,7 @@ const latestShoppingCart = function (arr) {
     alert("Inserisci un'array");
     return;
   } else {
-    console.log(shoppingCart.slice(-1));
+    console.log("5E) ", shoppingCart.slice(-1));
   }
 };
 
@@ -152,6 +152,33 @@ const latestShoppingCart = function (arr) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const loopUntil = function (x) {
+  if (typeof x !== "number") {
+    alert("Inserisci due numeri");
+    return;
+  } else if (x === NaN) {
+    alert("Questo valore non è consentito");
+    return;
+  } else if (x <= 0 || x >= 9) {
+    alert("Inserisci un numero intero compreso tra 0 e 9 esclusi");
+    return;
+  } else {
+    let index = 0;
+    let n = 0;
+    let iterazioni = 0;
+    while (index < 3) {
+      while (x >= n) {
+        n = Math.floor(Math.random() * 10);
+        console.log(n);
+        iterazioni++;
+      }
+      console.log("--------");
+      n = 0;
+      index++;
+    }
+    console.log("6E) Numero di iterazioni =", iterazioni);
+  }
+};
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
