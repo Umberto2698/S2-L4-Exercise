@@ -36,11 +36,9 @@ const checkArray = function (arr) {
 const shoppingCartTotal = function (arr) {
   let total = 0;
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i].quantity !== 0) {
-      let price = arr[i].price;
-      let quantity = arr[i].quantity;
-      total += price * quantity;
-    }
+    let price = arr[i].price;
+    let quantity = arr[i].quantity;
+    total += price * quantity;
   }
   console.log("2E) Il totale è", total);
 };
@@ -92,10 +90,8 @@ const addToShoppingCart = function (ogg) {
       console.log(arr);
       let totalObject = 0;
       for (let i = 0; i < arr.length; i++) {
-        if (arr[i].quantity !== 0) {
-          let quantity = arr[i].quantity;
-          totalObject += quantity;
-        }
+        let quantity = arr[i].quantity;
+        totalObject += quantity;
       }
       console.log("3E) Stai acquistando", totalObject, "prodotti");
     }
@@ -120,31 +116,35 @@ const maxShoppingCart = function (arr) {
     alert("Inserisci un'array");
     return;
   } else {
-    let price = [];
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i].quantity !== 0) {
-        price.push(arr[i].price);
-      }
-    }
     let maxPrice = [];
-    for (let i = 0; i < 1; i++) {
-      for (let j = 0; j < price.length; j++) {
-        if (price[i] >= price[j]) {
-          price.slice(i, i + 1);
-          maxPrice.splice(0, 1, price[i]);
+    for (let i = 0; i < shoppingCart.length; i++) {
+      for (let j = 0; j < shoppingCart.length; j++) {
+        if (shoppingCart[i].price >= shoppingCart[j].price) {
+          maxPrice.splice(0, 1, shoppingCart[i].price);
           break;
+        } else {
+          j = shoppingCart.length;
         }
       }
     }
+    console.log(maxPrice);
   }
 };
-maxShoppingCart(shoppingCart);
+
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const latestShoppingCart = function (arr) {
+  if (typeof arr !== "object") {
+    alert("Inserisci un'array");
+    return;
+  } else {
+    console.log(shoppingCart.slice(-1));
+  }
+};
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
