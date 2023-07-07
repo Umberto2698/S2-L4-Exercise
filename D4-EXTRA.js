@@ -185,6 +185,19 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const average = function (arr) {
+  let sum = 0;
+  let numberOfAddend = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number" && arr[i] !== NaN) {
+      sum += arr[i];
+      numberOfAddend++;
+    }
+  }
+  let average = sum / numberOfAddend;
+  console.log("7E) ", average);
+};
+let example = [21, " ", "ciao", 3, 32.6, true];
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
