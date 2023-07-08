@@ -265,7 +265,9 @@ filtro(emailContent);
 /* SCRIVI QUI LA TUA RISPOSTA */
 const howManyDays = function (date) {
   let today = Date.now();
-  /*let year = date.getFullYear();
+  /* Stavo facendo tutto questo perchè avevo letto su mdn che .parse funziona solo se la data è in forma di string  
+  ma non credo di aver capito correttamente dato che funziona anche se la data è fornita in milliosecondi.
+  let year = date.getFullYear();
   let month = date.getMonth();
   let day = date.getDate();
   let hours = date.getHours();
@@ -300,5 +302,25 @@ const matrixGenerator = function (x, y) {
     alert("Inserisci due numeri interi");
     return;
   } else {
+    let matrix = [];
+    for (let i = 0; i < y; i++) {
+      let rows = "[";
+      for (let j = 0; j < x; j++) {
+        rows += "".concat(i, j) + ",";
+      }
+      matrix[i] = rows.slice(0, rows.length - 1);
+    }
+    for (let i = 0; i < matrix.length; i++) {
+      matrix[i] = matrix[i].concat("]");
+    }
+    console.log(matrix);
   }
 };
+
+matrixGenerator(3, 2);
+/*let elements = [];
+for (let i = 0; i < y; i++) {
+  for (let j = 0; j < x; j++) {
+    elements.push(`${i}${j}`);
+  }
+}*/
