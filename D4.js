@@ -35,10 +35,13 @@ const area = function (l1, l2) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 const crazySum = function (int1, int2) {
   if (typeof int1 !== "number" || typeof int2 !== "number") {
-    alert("Inserisci due numeri");
+    alert("Inserisci due numeri interi");
     return;
   } else if (int1 === NaN || int2 === NaN) {
     alert("Questo valore non è consentito");
+    return;
+  } else if (int1 !== parseInt(int1, 10) || int2 !== parseInt(int2, 10)) {
+    alert("Inserisci due numeri interi");
     return;
   } else if (int1 === int2) {
     let crazy = (int1 + int2) * 3;
@@ -79,10 +82,13 @@ const crazyDiff = function (n1) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 const boundary = function (n) {
   if (typeof n !== "number") {
-    alert("Inserisci un numero");
+    alert("Inserisci un numero intero");
     return;
   } else if (n === NaN) {
     alert("Questo valore non è consentito");
+    return;
+  } else if (n !== parseInt(n, 10)) {
+    alert("Inserisci un numero intero");
     return;
   } else if (n === 400 || (n > 20 && n <= 100)) {
     console.log("4) true");
@@ -216,10 +222,13 @@ const cutString = function (str) {
 /* SCRIVI QUI LA TUA RISPOSTA */
 const giveMeRandom = function (n) {
   if (typeof n !== "number") {
-    alert("Inserisci un numero maggiore o uguale a 0");
+    alert("Inserisci un numero intero maggiore o uguale a 0");
     return;
   } else if (n === NaN) {
     alert("Questo valore non è consentito");
+    return;
+  } else if (n !== parseInt(n, 10)) {
+    alert("Inserisci un numero intero");
     return;
   } else {
     let rndNumber = [];

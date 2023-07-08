@@ -156,7 +156,7 @@ latestShoppingCart(shoppingCart);
 /* SCRIVI QUI LA TUA RISPOSTA */
 const loopUntil = function (x) {
   if (typeof x !== "number") {
-    alert("Inserisci due numeri");
+    alert("Inserisci un numero");
     return;
   } else if (x === NaN) {
     alert("Questo valore non è consentito");
@@ -289,3 +289,16 @@ howManyDays(date);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const matrixGenerator = function (x, y) {
+  if (typeof x !== "number" || typeof y !== "number") {
+    alert("Inserisci due numeri interi");
+    return;
+  } else if (x === NaN || y === NaN) {
+    alert("Questo valore non è consentito");
+    return;
+  } else if (x !== parseInt(x, 10) || y !== parseInt(y, 10)) {
+    alert("Inserisci due numeri interi");
+    return;
+  } else {
+  }
+};
