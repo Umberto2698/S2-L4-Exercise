@@ -237,6 +237,23 @@ const longest = function (arr) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const filtro = function (emailContent) {
+  let words = emailContent.split(" ");
+  let condition = null;
+  for (let i = 0; i < words.length; i++) {
+    if (words[i] == "SPAM" || words[i] == "SCAM") {
+      condition = false;
+      break;
+    }
+  }
+  if (condition == false) {
+    console.log("9E) ", false);
+  } else {
+    console.log("9E) ", true);
+  }
+};
+let emailContent =
+  "Ciao Maria, come stai. Ti scrivo dall'Italia, sono venuto qui in vacanza e SPAM rimarrò fino al 18 Ottobre. Il clima è fantastico in questo periodo. Tu che mi racconti di bello?";
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
