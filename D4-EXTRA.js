@@ -115,22 +115,8 @@ const maxShoppingCart = function (arr) {
   if (typeof arr !== "object") {
     alert("Inserisci un'array");
     return;
-  } else {
-    let maxPrice = [];
-    for (let i = 0; i < shoppingCart.length; i++) {
-      for (let j = 0; j < shoppingCart.length; j++) {
-        if (shoppingCart[i].price >= shoppingCart[j].price) {
-          maxPrice.splice(0, 1, shoppingCart[i].price);
-          break;
-        } else {
-          j = shoppingCart.length;
-        }
-      }
-    }
-    console.log("4E) ", maxPrice);
   }
 };
-maxShoppingCart(shoppingCart);
 
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -302,25 +288,22 @@ const matrixGenerator = function (x, y) {
     alert("Inserisci due numeri interi");
     return;
   } else {
-    let matrix = [];
+    let elements = [];
     for (let i = 0; i < y; i++) {
       let rows = "[";
       for (let j = 0; j < x; j++) {
         rows += "".concat(i, j) + ",";
       }
-      matrix[i] = rows.slice(0, rows.length - 1);
+      elements[i] = rows.slice(0, rows.length - 1);
     }
-    for (let i = 0; i < matrix.length; i++) {
-      matrix[i] = matrix[i].concat("]");
+    for (let i = 0; i < elements.length; i++) {
+      elements[i] = elements[i].concat("]");
+    }
+    let matrix = "";
+    for (let i = 0; i < elements.length; i++) {
+      matrix += elements[i] + "\n";
     }
     console.log(matrix);
   }
 };
-
 matrixGenerator(3, 2);
-/*let elements = [];
-for (let i = 0; i < y; i++) {
-  for (let j = 0; j < x; j++) {
-    elements.push(`${i}${j}`);
-  }
-}*/
