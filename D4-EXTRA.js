@@ -188,7 +188,7 @@ Crea una funzione chiamata "average" che riceve un array come parametro e ne rit
 const average = function (arr) {
   let sum = 0;
   let numberOfAddend = 0;
-  for (i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (typeof arr[i] === "number" && arr[i] !== NaN) {
       sum += arr[i];
       numberOfAddend++;
@@ -204,6 +204,32 @@ let example = [21, " ", "ciao", 3, 32.6, true];
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const longest = function (arr) {
+  if (typeof arr !== "object") {
+    alert("Inserisci un'array");
+    return;
+  } else {
+    let onlyString = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (typeof arr[i] === "string") {
+        onlyString.push(arr[i]);
+      }
+    }
+    console.log(onlyString);
+    let stringLength = [];
+    for (let i = 0; i < onlyString.length; i++) {
+      stringLength.push(onlyString[i].length);
+    }
+    console.log(stringLength);
+    let biggest = Math.max(...stringLength);
+    console.log(biggest);
+    for (let i = 0; i < stringLength.length; i++) {
+      if (stringLength[i] == biggest) {
+        console.log("8E) Questa è la stringa più lunga: ", onlyString[i]);
+      }
+    }
+  }
+};
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
