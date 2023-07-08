@@ -16,16 +16,15 @@ const checkArray = function (arr) {
     for (let i = 0; i < arr.length; i++) {
       if (arr[i] <= 5) {
         console.log("1E) il numero ", arr[i], " non è maggiore di 5");
-        break;
       } else {
         sum += arr[i];
         console.log("1E) il numero ", arr[i], " è maggiore di 5");
-        break;
       }
     }
     console.log("1E) Questa è la somma dei numeri maggiori di 5 ", sum);
   }
 };
+checkArray(casualNumber);
 
 /* EXTRA 2
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -69,6 +68,7 @@ const shoppingCart = [
     quantity: 1,
   },
 ];
+shoppingCartTotal(shoppingCart);
 
 /* EXTRA 3
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -87,7 +87,6 @@ const addToShoppingCart = function (ogg) {
     } else {
       let arr = shoppingCart;
       arr.push(ogg);
-      console.log(arr);
       let totalObject = 0;
       for (let i = 0; i < arr.length; i++) {
         let quantity = arr[i].quantity;
@@ -104,6 +103,7 @@ const ogg = {
   id: 3819981,
   quantity: 1,
 };
+addToShoppingCart(ogg);
 
 /* EXTRA 4
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -130,6 +130,7 @@ const maxShoppingCart = function (arr) {
     console.log("4E) ", maxPrice);
   }
 };
+maxShoppingCart(shoppingCart);
 
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
@@ -145,6 +146,7 @@ const latestShoppingCart = function (arr) {
     console.log("5E) ", shoppingCart.slice(-1));
   }
 };
+latestShoppingCart(shoppingCart);
 
 /* EXTRA 6
  Crea una funzione chiamata "loopUntil" che riceve un numero intero come parametro con valore tra 0 e 9.
@@ -179,6 +181,7 @@ const loopUntil = function (x) {
     console.log("6E) Numero di iterazioni =", iterazioni);
   }
 };
+loopUntil(6);
 
 /* EXTRA 7
 Crea una funzione chiamata "average" che riceve un array come parametro e ne ritorna la media aritmetica. La funzione salta automaticamente i valori non numerici nell'array.
@@ -198,6 +201,7 @@ const average = function (arr) {
   console.log("7E) ", average);
 };
 let example = [21, " ", "ciao", 3, 32.6, true];
+average(example);
 
 /* EXTRA 8
  Crea una funzione chiamata "longest" che trova la stringa più lunga all'interno di un array di stringhe fornito come parametro.
@@ -215,14 +219,11 @@ const longest = function (arr) {
         onlyString.push(arr[i]);
       }
     }
-    console.log(onlyString);
     let stringLength = [];
     for (let i = 0; i < onlyString.length; i++) {
       stringLength.push(onlyString[i].length);
     }
-    console.log(stringLength);
     let biggest = Math.max(...stringLength);
-    console.log(biggest);
     for (let i = 0; i < stringLength.length; i++) {
       if (stringLength[i] == biggest) {
         console.log("8E) Questa è la stringa più lunga: ", onlyString[i]);
@@ -230,6 +231,7 @@ const longest = function (arr) {
     }
   }
 };
+longest(example);
 
 /* EXTRA 9
  Crea una funzione per creare un filtro anti-spam per la tua casella email. La funzione riceve un parametro stringa chiamato "emailContent", e torna un valore booleano.
@@ -254,13 +256,30 @@ const filtro = function (emailContent) {
 };
 let emailContent =
   "Ciao Maria, come stai. Ti scrivo dall'Italia, sono venuto qui in vacanza e SPAM rimarrò fino al 18 Ottobre. Il clima è fantastico in questo periodo. Tu che mi racconti di bello?";
+filtro(emailContent);
 
 /* EXTRA 10
  Scrivi una funzione che riceve una data come parametro, e calcola il numero di giorni passati da quella data.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-
+const howManyDays = function (date) {
+  let today = Date.now();
+  /*let year = date.getFullYear();
+  let month = date.getMonth();
+  let day = date.getDate();
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  let milliseconds = date.getMilliseconds();
+  let dateToString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}.${milliseconds}`;*/
+  let thatDate = Date.parse(date);
+  let howManyMillisec = today - thatDate;
+  let days = howManyMillisec / 86400000;
+  console.log("10E) Sono passati ", days, "giorni");
+};
+let date = new Date(72389422927);
+howManyDays(date);
 /* EXTRA 11
  Scrivi una funzione chiamata "matrixGenerator" che riceve come parametri due numeri interi, "x" e "y".
  Il risultato deve essere una matrice di "x" volte "y", e i valori devono rispecchiare gli indici della posizione all'interno della matrice.

@@ -231,3 +231,4 @@ const giveMeRandom = function (n) {
     return rndNumber;
   }
 };
+let casualNumber = giveMeRandom(7);
