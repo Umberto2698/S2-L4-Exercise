@@ -115,9 +115,22 @@ const maxShoppingCart = function (arr) {
   if (typeof arr !== "object") {
     alert("Inserisci un'array");
     return;
+  } else {
+    let maxPrice = [];
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[i].price > arr[j].price) {
+          maxPrice.splice(0, 1, arr[i]);
+        } else {
+          maxPrice.splice(0, 1, arr[j]);
+          break;
+        }
+      }
+    }
+    console.log("4E) ", maxPrice);
   }
 };
-
+maxShoppingCart(shoppingCart);
 /* EXTRA 5
  Nel tuo eCommerce disponi di un'array di oggetti chiamato "shoppingCart". Ognuno di questi oggetti ha le seguenti proprietà: "price", "name", "id" e "quantity".
  Crea una funzione chiamata "latestShoppingCart" che riceve l'array "shoppingCart" e ritorna l'ultimo elemento.
