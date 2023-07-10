@@ -290,7 +290,37 @@ howManyDays(date);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-const matrixGenerator = function (x, y) {
+const matrixGenerator1 = function (x, y) {
+  if (typeof x !== "number" || typeof y !== "number") {
+    alert("Inserisci due numeri interi");
+    return;
+  } else if (x === NaN || y === NaN) {
+    alert("Questo valore non è consentito");
+    return;
+  } else if (x !== parseInt(x, 10) || y !== parseInt(y, 10)) {
+    alert("Inserisci due numeri interi");
+    return;
+  } else {
+    let elements = [];
+    for (let i = 0; i < y; i++) {
+      let rows = "[";
+      for (let j = 0; j < x; j++) {
+        rows += "".concat(i, j) + ",";
+      }
+      elements[i] = rows.slice(0, rows.length - 1);
+    }
+    for (let i = 0; i < elements.length; i++) {
+      elements[i] = elements[i].concat("]");
+    }
+    let matrix = "";
+    for (let i = 0; i < elements.length; i++) {
+      matrix += elements[i] + "\n";
+    }
+    console.log(matrix);
+  }
+};
+
+const matrixGenerator2 = function (x, y) {
   if (typeof x !== "number" || typeof y !== "number") {
     alert("Inserisci due numeri interi");
     return;
@@ -393,35 +423,5 @@ const matrixGenerator = function (x, y) {
       }
       console.log(matrix);
     }
-  }
-};
-
-const matrixGenerator1 = function (x, y) {
-  if (typeof x !== "number" || typeof y !== "number") {
-    alert("Inserisci due numeri interi");
-    return;
-  } else if (x === NaN || y === NaN) {
-    alert("Questo valore non è consentito");
-    return;
-  } else if (x !== parseInt(x, 10) || y !== parseInt(y, 10)) {
-    alert("Inserisci due numeri interi");
-    return;
-  } else {
-    let elements = [];
-    for (let i = 0; i < y; i++) {
-      let rows = "[";
-      for (let j = 0; j < x; j++) {
-        rows += "".concat(i, j) + ",";
-      }
-      elements[i] = rows.slice(0, rows.length - 1);
-    }
-    for (let i = 0; i < elements.length; i++) {
-      elements[i] = elements[i].concat("]");
-    }
-    let matrix = "";
-    for (let i = 0; i < elements.length; i++) {
-      matrix += elements[i] + "\n";
-    }
-    console.log(matrix);
   }
 };
